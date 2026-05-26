@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:personalfinance/pages/Incomes.dart';
-
-
-class Income extends StatefulWidget {
-  const Income({super.key});
+class EditIncome extends StatefulWidget {
+  const EditIncome({super.key});
 
   @override
-  State<Income> createState() => _IncomeState();
+  State<EditIncome> createState() => _EditIncomeState();
 }
 
-class _IncomeState extends State<Income> {
+class _EditIncomeState extends State<EditIncome> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-
   final TextEditingController _amount = TextEditingController();
   final TextEditingController _date = TextEditingController();
   final TextEditingController _reason = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,7 +136,7 @@ class _IncomeState extends State<Income> {
 
                           /// TITLE
                           const Text(
-                            "ثبت درآمد",
+                            "تغییر درآمد",
                             style: TextStyle(
                               fontSize: 32,
                               fontWeight: FontWeight.bold,
@@ -297,7 +293,8 @@ class _IncomeState extends State<Income> {
                                     ),
                                   );
 
-                                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Incomes()));
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context)=>Incomes()));
                                 }
                               },
 
